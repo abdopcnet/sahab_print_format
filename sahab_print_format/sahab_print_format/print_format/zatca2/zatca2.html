@@ -148,7 +148,14 @@
     </thead>
     <tbody>
       {% for row in doc.items %}
-        <tr style="{% if loop.index % 2 == 0 %}background: #f9f9f9;{% endif %}{% if not loop.last %}border-bottom: 1px dotted #aaa;{% endif %}">
+        {% set row_style = "" %}
+        {% if loop.index % 2 == 0 %}
+          {% set row_style = row_style + "background: #f9f9f9; " %}
+        {% endif %}
+        {% if not loop.last %}
+          {% set row_style = row_style + "border-bottom: 1px dotted #aaa; " %}
+        {% endif %}
+        <tr{% if row_style %} style="{{ row_style|trim }}"{% endif %}>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; width: 30px;">{{ loop.index }}</td>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; width: 80px;">{{ row.item_code }}</td>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: right;">{{ row.description }}</td>
