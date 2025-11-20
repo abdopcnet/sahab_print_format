@@ -183,30 +183,30 @@
       <table style="width:100%; border-collapse:collapse; font-size:13px; margin:0; padding:0;">
         <tbody>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي غير شامل الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي غير شامل الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
               {{ frappe.utils.fmt_money(doc.net_total, currency="") }}
             </td>
-            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">مجموع قيمة الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">مجموع قيمة الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
               {{ frappe.utils.fmt_money(doc.total_taxes_and_charges, currency="") }}
             </td>
-            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي شامل الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي شامل الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
               {{ frappe.utils.fmt_money(doc.grand_total, currency="") }}
             </td>
-            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
 
@@ -222,36 +222,36 @@
           {% if submitted_payments %}
             {% for entry in submitted_payments %}
             <tr>
-              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">
+              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">
                 المبلغ المحصل
                 <span style="display:inline-block; font-size:0.7em; font-weight:normal; color:#555; margin:0; margin-right:4px; white-space:nowrap;">( إذن إستلام {{ entry.name }} )</span>
               </th>
-              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
                 {{ frappe.utils.fmt_money(entry.paid_amount, currency="") }}
               </td>
-              <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:20px;">
-                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 1em; height: 1em; vertical-align: middle; display: block; margin: 0 auto;">
+              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
               </td>
             </tr>
             {% endfor %}
             <tr>
-              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; border-top:1px solid #bbb; direction:rtl;">إجمالي المبالغ المحصلة</th>
-              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb; vertical-align:middle;">
+              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; border-top:1px solid #bbb; direction:rtl;">إجمالي المبالغ المحصلة</th>
+              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb; vertical-align:middle;">
                 {{ frappe.utils.fmt_money(submitted_payments | map(attribute='paid_amount') | sum, currency="") }}
               </td>
-              <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px; border-top:1px solid #bbb;">
-                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
+              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; border-top:1px solid #bbb;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
               </td>
             </tr>
           {% endif %}
 
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:bold; text-align:right; direction:rtl;">المبلغ المتبقي</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:bold; text-align:right; direction:rtl;">المبلغ المتبقي</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
               {{ frappe.utils.fmt_money(doc.outstanding_amount, currency="") }}
             </td>
-            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:2px solid #000; text-align:center; vertical-align:middle; width:24px;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:2px solid #000; text-align:center; vertical-align:middle; width:28px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 22px; height: auto; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
 
@@ -270,6 +270,10 @@
         <div style="margin: 2px 0 60px 0; text-align: right; direction: ltr; unicode-bidi: embed; display: block;">
           {% if doc.custom_qr_image_src %}
             <img src="{{ doc.custom_qr_image_src | safe }}" alt="QR Code" style="width: 180px; height: 180px; object-fit: contain; display: block; margin-left: auto;">
+          {% else %}
+            <div style="width: 180px; height: 180px; border: 2px solid #ccc; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-left: auto; background-color: #f9f9f9; direction: rtl; text-align: center; padding: 10px; box-sizing: border-box;">
+              <span style="font-family: 'Cairo', Arial, sans-serif; font-size: 14px; color: #666; font-weight: bold; line-height: 1.4;">لم يتم إنشاء الرمز</span>
+            </div>
           {% endif %}
         </div>
       </td>
@@ -277,70 +281,78 @@
   </table>
 </div>
 
-<!-- Status Badge -->
-{% if doc.status %}
-    {% set status_translation = {
-        "Draft": "مسودة",
-        "Return": "مرتجع",
-        "Credit Note Issued": "تم إصدار إشعار دائن",
-        "Submitted": "تم الإرسال",
-        "Paid": "مدفوع",
-        "Partly Paid": "مدفوع جزئياً",
-        "Unpaid": "غير مدفوع",
-        "Unpaid and Discounted": "غير مدفوع مع خصم",
-        "Partly Paid and Discounted": "مدفوع جزئياً مع خصم",
-        "Overdue and Discounted": "متأخر مع خصم",
-        "Overdue": "متأخر",
-        "Cancelled": "ملغي",
-        "Internal Transfer": "تحويل داخلي"
-    } %}
-
-    {% set translated_status = status_translation.get(doc.status, doc.status) %}
-
-    <div style="width: 100%; text-align: center; margin: 10px 0 0 0;">
-        {% if doc.status == "Paid" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#e6f7ea; color:#0A9928; border:1.2px solid #0A9928;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Partly Paid" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fffbe6; color:#FFC107; border:1.2px solid #FFC107;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Unpaid" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fdeaea; color:#D23; border:1.2px solid #D23;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Overdue" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fdeaea; color:#D23; border:1.2px solid #D23;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Cancelled" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#6C757D; border:1.2px solid #6C757D;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Submitted" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#eaf1fb; color:#007BFF; border:1.2px solid #007BFF;">
-            {{ translated_status }}
-        </span>
-        {% elif doc.status == "Draft" %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#C4C4C4; border:1.2px solid #C4C4C4;">
-            {{ translated_status }}
-        </span>
-        {% else %}
-        <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#222; border:1.2px solid #bbb;">
-            {{ translated_status }}
-        </span>
-        {% endif %}
-    </div>
-{% endif %}
-
 <!-- Signatures - Moved to bottom, PDF compatible -->
 <div style="width:100%; margin-top:30px; margin-bottom:10px; overflow:hidden; background:#fff; font-family:'Cairo', Tahoma, Arial, sans-serif; line-height:1; border:none; padding:10px 0; page-break-inside:avoid;">
   <table style="width:100%; border:none; background:none; border-spacing:0; direction:rtl; line-height:1; margin:0; padding:0;">
     <tbody>
       <tr>
-        <td style="font-family:'Cairo', Arial, sans-serif; font-size:0.92em; padding:5px; vertical-align:top; color:#222; font-weight:700; letter-spacing:0.1px; text-align:center; border:none; width:50%;">البائع</td>
-        <td style="font-family:'Cairo', Arial, sans-serif; font-size:0.92em; padding:5px; vertical-align:top; color:#222; font-weight:700; letter-spacing:0.1px; text-align:center; border:none; width:50%;">المستلم</td>
+        <td style="font-family:'Cairo', Arial, sans-serif; font-size:0.92em; padding:5px; vertical-align:top; color:#222; font-weight:700; letter-spacing:0.1px; text-align:center; border:none; width:50%;">
+          {% if doc.owner %}
+            {% set created_by = frappe.db.get_value("User", doc.owner, "full_name") or doc.owner %}
+            <div style="margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: bold; border: 1.2px solid #1976d2; padding: 3px 10px; border-radius: 7px; font-family: 'Arial', sans-serif; background: #e3f0fb; color: #1976d2; display: inline-block; line-height: 1.3; text-align: center; letter-spacing: 0.5px;">
+                تم الإنشاء<br>{{ created_by }}
+              </span>
+            </div>
+          {% endif %}
+          البائع
+        </td>
+        <td style="font-family:'Cairo', Arial, sans-serif; font-size:0.92em; padding:5px; vertical-align:top; color:#222; font-weight:700; letter-spacing:0.1px; text-align:center; border:none; width:50%;">
+          {% if doc.status %}
+            {% set status_translation = {
+              "Draft": "مسودة",
+              "Return": "مرتجع",
+              "Credit Note Issued": "تم إصدار إشعار دائن",
+              "Submitted": "تم الإرسال",
+              "Paid": "مدفوع",
+              "Partly Paid": "مدفوع جزئياً",
+              "Unpaid": "غير مدفوع",
+              "Unpaid and Discounted": "غير مدفوع مع خصم",
+              "Partly Paid and Discounted": "مدفوع جزئياً مع خصم",
+              "Overdue and Discounted": "متأخر مع خصم",
+              "Overdue": "متأخر",
+              "Cancelled": "ملغي",
+              "Internal Transfer": "تحويل داخلي"
+            } %}
+            {% set translated_status = status_translation.get(doc.status, doc.status) %}
+            <div style="margin-bottom: 10px;">
+              {% if doc.status == "Paid" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#e6f7ea; color:#0A9928; border:1.2px solid #0A9928;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Partly Paid" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fffbe6; color:#FFC107; border:1.2px solid #FFC107;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Unpaid" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fdeaea; color:#D23; border:1.2px solid #D23;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Overdue" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#fdeaea; color:#D23; border:1.2px solid #D23;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Cancelled" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#6C757D; border:1.2px solid #6C757D;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Submitted" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#eaf1fb; color:#007BFF; border:1.2px solid #007BFF;">
+                {{ translated_status }}
+              </span>
+              {% elif doc.status == "Draft" %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#C4C4C4; border:1.2px solid #C4C4C4;">
+                {{ translated_status }}
+              </span>
+              {% else %}
+              <span style="font-size: 15px; font-weight: bold; padding: 5px 22px; border-radius: 7px; font-family: Arial, sans-serif; display: inline-block; line-height: 1.2; text-align: center; background:#f5f5f5; color:#222; border:1.2px solid #bbb;">
+                {{ translated_status }}
+              </span>
+              {% endif %}
+            </div>
+          {% endif %}
+          المستلم
+        </td>
       </tr>
       <tr>
         <td style="font-family:'Cairo', Arial, sans-serif; font-size:0.92em; vertical-align:top; color:#222; font-weight:700; letter-spacing:0.1px; text-align:center; border:none; height:30px; padding:5px 5px 0 5px;"></td>
@@ -358,12 +370,7 @@
   </table>
 </div>
 
-<!-- User Info -->
-{% if doc.owner %}
-    {% set created_by = frappe.db.get_value("User", doc.owner, "full_name") or doc.owner %}
-    <div style="width: 100%; text-align: right; margin-top: 8px; padding-right: 32px;">
-        <span style="font-size: 12px; font-weight: bold; border: 1.2px solid #1976d2; padding: 3px 10px; border-radius: 7px; font-family: 'Arial', sans-serif; background: #e3f0fb; color: #1976d2; display: inline-block; line-height: 1.3; text-align: center; letter-spacing: 0.5px;">
-            تم الإنشاء<br>{{ created_by }}
-        </span>
-    </div>
+<!-- Footer from Letter Head -->
+{% if footer %}
+{{ footer | safe }}
 {% endif %}
