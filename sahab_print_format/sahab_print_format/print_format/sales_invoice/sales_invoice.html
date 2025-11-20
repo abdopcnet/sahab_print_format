@@ -162,10 +162,10 @@
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; width: 60px;">{{ row.uom }}</td>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; width: 70px;">{{ "{:,.2f}".format(row.qty or 0) }}</td>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; direction: ltr; width: 80px;">
-            <span style="font-weight:normal;">§ </span>{{ "{:,.2f}".format(row.net_rate or 0) }}
+            {{ "{:,.2f}".format(row.net_rate or 0) }}
           </td>
           <td style="padding: 7px 5px; font-size: 0.9em; vertical-align: middle; text-align: center; direction: ltr; width: 100px;">
-            <span style="font-weight:normal;">§ </span>{{ "{:,.2f}".format(row.net_amount or 0) }}
+            {{ "{:,.2f}".format(row.net_amount or 0) }}
           </td>
         </tr>
       {% endfor %}
@@ -183,21 +183,30 @@
       <table style="width:100%; border-collapse:collapse; font-size:13px; margin:0; padding:0;">
         <tbody>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:normal; text-align:right;">الإجمالي غير شامل الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums;">
-              {{ doc.get_formatted("net_total") }}
+            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي غير شامل الضريبة</th>
+            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+              {{ frappe.utils.fmt_money(doc.net_total, currency="") }}
+            </td>
+            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:normal; text-align:right;">مجموع قيمة الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums;">
-              {{ doc.get_formatted("total_taxes_and_charges") }}
+            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">مجموع قيمة الضريبة</th>
+            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+              {{ frappe.utils.fmt_money(doc.total_taxes_and_charges, currency="") }}
+            </td>
+            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:normal; text-align:right;">الإجمالي شامل الضريبة</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums;">
-              {{ doc.get_formatted("grand_total") }}
+            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">الإجمالي شامل الضريبة</th>
+            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+              {{ frappe.utils.fmt_money(doc.grand_total, currency="") }}
+            </td>
+            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
 
@@ -213,32 +222,41 @@
           {% if submitted_payments %}
             {% for entry in submitted_payments %}
             <tr>
-              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:normal; text-align:right;">
+              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl;">
                 المبلغ المحصل
                 <span style="display:inline-block; font-size:0.7em; font-weight:normal; color:#555; margin:0; margin-right:4px; white-space:nowrap;">( إذن إستلام {{ entry.name }} )</span>
               </th>
-              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums;">
-                {{ frappe.utils.fmt_money(entry.paid_amount, currency=doc.currency) }}
+              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+                {{ frappe.utils.fmt_money(entry.paid_amount, currency="") }}
+              </td>
+              <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:20px;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 1em; height: 1em; vertical-align: middle; display: block; margin: 0 auto;">
               </td>
             </tr>
             {% endfor %}
             <tr>
-              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:normal; text-align:right; border-top:1px solid #bbb;">إجمالي المبالغ المحصلة</th>
-              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb;">
-                 {{ frappe.utils.fmt_money(submitted_payments | map(attribute='paid_amount') | sum, currency=doc.currency) }}
+              <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; border-top:1px solid #bbb; direction:rtl;">إجمالي المبالغ المحصلة</th>
+              <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb; vertical-align:middle;">
+                {{ frappe.utils.fmt_money(submitted_payments | map(attribute='paid_amount') | sum, currency="") }}
+              </td>
+              <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:24px; border-top:1px solid #bbb;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
               </td>
             </tr>
           {% endif %}
 
           <tr>
-            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:normal; text-align:right;">المبلغ المتبقي</th>
-            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:normal; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums;">
-              {{ doc.get_formatted("outstanding_amount") }}
+            <th style="margin:0; padding:3px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:bold; text-align:right; direction:rtl;">المبلغ المتبقي</th>
+            <td style="margin:0; padding:3px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle;">
+              {{ frappe.utils.fmt_money(doc.outstanding_amount, currency="") }}
+            </td>
+            <td style="margin:0; padding:3px 2px; line-height:1; border-bottom:2px solid #000; text-align:center; vertical-align:middle; width:24px;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px; height: 18px; vertical-align: middle; display: block; margin: 0 auto;">
             </td>
           </tr>
 
           <tr>
-            <td colspan="2" style="margin:0; padding:0 8px; font-size:0.7em; line-height:1; font-weight:normal; text-align:center; color:#222; border:none;">
+            <td colspan="3" style="margin:0; padding:5px 8px; font-size:1em; line-height:1.4; font-weight:normal; text-align:center; color:#222; border:none; word-wrap:break-word; white-space:normal; overflow-wrap:break-word;">
               {{ doc.custom_tafqeet_amount }}
             </td>
           </tr>
