@@ -187,33 +187,33 @@
       <!-- Totals Column - Always Left -->
       <td style="width:300px; vertical-align:middle; padding-right:10px; direction: rtl; text-align: right;">
         <div style="margin:3px 0 0 0; border:1px solid #000; border-radius:8px; overflow:hidden; background:transparent; direction:rtl; font-family:'Arial',sans-serif; page-break-inside:avoid; unicode-bidi: embed; display: block;">
-      <table style="width:100%; border-collapse:collapse; font-size:13px; margin:0; padding:0; line-height:1;">
+      <table style="width:100%; border-collapse:collapse; font-size:15px; margin:0; padding:0; line-height:1;">
         <tbody>
           <tr>
-            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto;">الإجمالي غير شامل الضريبة</th>
-            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto; display:table-cell;">الإجمالي غير شامل الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto; display:table-cell;">
               {{ frappe.utils.fmt_money(doc.net_total, currency="") }}
             </td>
-            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto; display:table-cell;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px !important; height: 18px !important; min-width: 18px; max-width: 18px; min-height: 18px; max-height: 18px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto;">مجموع قيمة الضريبة</th>
-            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto; display:table-cell;">مجموع قيمة الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto; display:table-cell;">
               {{ frappe.utils.fmt_money(doc.total_taxes_and_charges, currency="") }}
             </td>
-            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto; display:table-cell;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px !important; height: 18px !important; min-width: 18px; max-width: 18px; min-height: 18px; max-height: 18px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
             </td>
           </tr>
           <tr>
-            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto;">الإجمالي شامل الضريبة</th>
-            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto; display:table-cell;">الإجمالي شامل الضريبة</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto; display:table-cell;">
               {{ frappe.utils.fmt_money(doc.grand_total, currency="") }}
             </td>
-            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto; display:table-cell;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 18px !important; height: 18px !important; min-width: 18px; max-width: 18px; min-height: 18px; max-height: 18px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
             </td>
           </tr>
 
@@ -229,36 +229,36 @@
           {% if submitted_payments %}
             {% for entry in submitted_payments %}
             <tr>
-              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto;">
+              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; direction:rtl; height:auto; display:table-cell;">
                 المبلغ المحصل
                 <span style="display:inline-block; font-size:0.7em; font-weight:normal; color:#555; margin:0; margin-right:4px; white-space:nowrap;">( إذن إستلام {{ entry.name }} )</span>
               </th>
-              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto;">
+              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto; display:table-cell;">
                 {{ frappe.utils.fmt_money(entry.paid_amount, currency="") }}
               </td>
-              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto;">
-                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; height:auto; display:table-cell;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
               </td>
             </tr>
             {% endfor %}
             <tr>
-              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; border-top:1px solid #bbb; direction:rtl; height:auto;">إجمالي المبالغ المحصلة</th>
-              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb; vertical-align:middle; height:auto;">
+              <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:1px solid #ddd; font-weight:bold; text-align:right; border-top:1px solid #bbb; direction:rtl; height:auto; display:table-cell;">إجمالي المبالغ المحصلة</th>
+              <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:1px solid #ddd; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; border-top:1px solid #bbb; vertical-align:middle; height:auto; display:table-cell;">
                 {{ frappe.utils.fmt_money(submitted_payments | map(attribute='paid_amount') | sum, currency="") }}
               </td>
-              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; border-top:1px solid #bbb;">
-                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+              <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:1px solid #ddd; text-align:center; vertical-align:middle; width:28px; border-top:1px solid #bbb; height:auto; display:table-cell;">
+                <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
               </td>
             </tr>
           {% endif %}
 
           <tr>
-            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:bold; text-align:right; direction:rtl; height:auto;">المبلغ المتبقي</th>
-            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto;">
+            <th style="margin:0; padding:7px 5px; line-height:1; vertical-align:middle; border-bottom:2px solid #000; font-weight:bold; text-align:right; direction:rtl; height:auto; display:table-cell;">المبلغ المتبقي</th>
+            <td style="margin:0; padding:7px 5px; line-height:1; border-bottom:2px solid #000; text-align:left; font-weight:bold; direction:ltr; white-space:nowrap; font-variant-numeric:tabular-nums; vertical-align:middle; height:auto; display:table-cell;">
               {{ frappe.utils.fmt_money(doc.outstanding_amount, currency="") }}
             </td>
-            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:2px solid #000; text-align:center; vertical-align:middle; width:28px; height:auto;">
-              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0;">
+            <td style="margin:0; padding:7px 2px; line-height:1; border-bottom:2px solid #000; text-align:center; vertical-align:middle; width:28px; height:auto; display:table-cell;">
+              <img src="https://sahab.goldledgers.com/files/Saudi_Riyal_Symbol.svg" alt="" style="width: 16px !important; height: 16px !important; min-width: 16px; max-width: 16px; min-height: 16px; max-height: 16px; vertical-align: middle !important; display: inline-block; object-fit: contain; flex-shrink: 0; flex-grow: 0; margin: 0; padding: 0;">
             </td>
           </tr>
 
