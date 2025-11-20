@@ -64,7 +64,7 @@
           {% set am_pm_ar = 'ص' if hour < 12 else 'م' %}
           {{ days_ar[weekday] }} {{ "%02d"|format(dt.day) }}-{{ "%02d"|format(dt.month) }}-{{ dt.year }} {{ hour12 }}:{{ "%02d"|format(minute) }} {{ am_pm_ar }}
         </td>
-      </tr> 
+      </tr>
 
       {% if customer_doc.custom_vat_registration_number %}
       <tr style="font-size:10pt; line-height:1.1; white-space:nowrap;">
