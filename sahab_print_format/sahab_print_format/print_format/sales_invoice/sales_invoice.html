@@ -18,10 +18,19 @@
   <div style="display:flex;justify-content:center;align-items:center;padding:4px 10px;line-height:1;text-align:center;white-space:nowrap;font-weight:bold;color:#000;font-size:1.4em;letter-spacing:.5px;">
     {% set invoice_type = "Simplified" %}
     {% if doc.custom_zatca_siaf %}
-        {% set buyer_vat = frappe.db.get_value("Sales Invoice Additional Fields", doc.custom_zatca_siaf, "buyer_vat_registration_number") %}
-        {% if buyer_vat %}
-            {% set invoice_type = "Standard" %}
+    {# Avoid Invalid DocType if KSA doctype is not installed #}
+    {% set buyer_vat = none %}
+    {% set _tbl = frappe.db.sql("SHOW TABLES LIKE %s", "tabSales Invoice Additional Fields") %}
+    {% if _tbl and (_tbl|len) > 0 %}
+      {% set _col = frappe.db.sql("SHOW COLUMNS FROM `tabSales Invoice Additional Fields` LIKE %s", "buyer_vat_registration_number") %}
+      {% if _col and (_col|len) > 0 %}
+        {% set _vat = frappe.db.sql("SELECT buyer_vat_registration_number FROM `tabSales Invoice Additional Fields` WHERE name=%s LIMIT 1", doc.custom_zatca_siaf) %}
+        {% if _vat and (_vat|len) > 0 and _vat[0] and _vat[0][0] %}
+          {% set buyer_vat = _vat[0][0] %}
         {% endif %}
+      {% endif %}
+    {% endif %}
+    {% if buyer_vat %}{% set invoice_type = "Standard" %}{% endif %}
     {% endif %}
     {% if invoice_type == "Standard" %}
         {% if doc.is_return %}إشعار دائن ضريبي قياسي{% elif doc.is_debit_note %}إشعار مدين ضريبي قياسي{% else %}فاتورة ضريبية قياسية{% endif %}
@@ -43,7 +52,7 @@
         <td style="border:none; padding:1pt; color:#111; text-align:right; font-weight:bold; width:15%; white-space:nowrap; vertical-align:middle;">رقم الفاتورة</td>
         <td style="border:none; padding:1pt; color:#111; text-align:right; width:35%; white-space:nowrap; vertical-align:middle;">{{ doc.name }}</td>
       </tr>
-      
+
       {% set address_name = frappe.db.get_value("Dynamic Link", {"link_doctype": "Customer", "link_name": doc.customer}, "parent") %}
       {% set address_line2 = "" %}{% set custom_area = "" %}{% set address_line1 = "" %}{% set city = "" %}{% set pincode = "" %}
       {% if address_name %}
@@ -86,7 +95,7 @@
         </td>
       </tr>
       {% endif %}
-      
+
       {% set type_ar = {
         "Tax Identification Number": ["الرقم الضريبي"],
         "Commercial Registration Number": ["السجل التجاري"],
@@ -252,7 +261,7 @@
       </table>
     </div>
       </td>
-      
+
       <!-- QR Code Column - Always Right -->
       <td style="width:200px; vertical-align:middle; padding-left:10px; direction: ltr; text-align: right;">
         <div style="margin: 2px 0 60px 0; text-align: right; direction: ltr; unicode-bidi: embed; display: block;">
